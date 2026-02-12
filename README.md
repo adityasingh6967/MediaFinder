@@ -1,109 +1,72 @@
-# 🎨 Image Discovery & Editor App (Pinterest-like)
+# MediaFinder 🎨🔎
 
-A full-featured **Pinterest-style image discovery platform** built with **React + Redux**, integrated with multiple image APIs and a **Canva-like image editor**. This is my **first large-scale project**, focused on real-world features, clean state management, and hands-on frontend architecture.
+MediaFinder is a React-based web application that allows users to search for images using external media APIs and edit them directly in a built-in canvas editor.
+
+The project combines API integration with a custom-built image editor powered by the HTML5 Canvas API — built without external editing libraries.
 
 ---
 
 ## 🚀 Features
 
-### 🔍 Image Discovery
+### 🔎 Media Search
+- Search images using external APIs (e.g., Pexels / Unsplash)
+- Fetch high-quality images dynamically
+- Select an image and send it directly to the editor
 
-* Search images from:
-
-  * **Unsplash API**
-  * **Pexels API**
-  * **Tenor API (GIFs)**
-* Fast search with Redux-managed state
-* Unified results from multiple APIs
-
-⚠️ **Note:** Infinite scrolling is **not implemented yet**. Results are currently loaded per search/page and rendered on scroll without auto-fetching more data.
-
----
-
-### 📌 Collections & Favorites
-
-* Save images to favorites
-* Organize images into collections
-* Redux-powered global state
-
----
-
-### 🖼️ Built-in Image Editor (Canva-like)
-
-The editor supports **two different image sources**:
-
-* Images clicked from APIs (Unsplash / Pexels / Tenor)
-* **Images uploaded directly from your PC**
-
-#### Editor Tools:
-
-* Crop
-* Rotate / Flip
-* Image filters
-* Resize canvas
-* Undo / Redo
-* Non-destructive editing
-
-Clicking **Edit** on any image opens the editor with the image pre-loaded, or users can start editing by uploading a local image.
+### 🖼️ Canvas Image Editor (Built with HTML5 Canvas)
+- Rotate image (90° increments)
+- Flip horizontally / vertically
+- Drag & reposition image
+- Crop selected area
+- Adjust canvas size
+- Change canvas background color (including transparent)
+- Add custom text with:
+  - Adjustable font size
+  - Custom text color
+- Apply filters:
+  - Brightness
+  - Contrast
+  - Saturation
+  - Blur
+  - Grayscale
+  - Sepia
+  - Hue Rotate
+  - Invert
+- Undo / Redo history (state-based)
+- Export edited image as PNG
 
 ---
 
-## 🧠 Tech Stack
+## 🛠 Tech Stack
 
-* **React**
-* **Redux / Redux Toolkit**
-* **HTML Canvas**
-* **CSS / Tailwind (if used)**
-* **Unsplash API**
-* **Pexels API**
-* **Tenor API**
-
----
-
-## 📦 Project Structure (High Level)
-
-```
-/src
- ├─ components
- ├─ pages
- ├─ redux
- │   ├─ slices
- │   └─ store.js
- ├─ editor
- │   ├─ canvas
- │   ├─ tools
- │   └─ history
- └─ utils
-```
+- React (Vite)
+- HTML5 Canvas API (no external editing libraries)
+- Redux (for image state management)
+- React Router
+- Tailwind CSS
+- Lucide Icons
+- External Image APIs (Pexels / Unsplash)
 
 ---
 
-## 🎯 Learning Goals & Outcomes
+## 🧠 Architecture Highlights
 
-* Managing complex global state with Redux
-* Working with multiple third-party APIs
-* Building a custom image editor using HTML Canvas
-* Implementing undo/redo logic
-* Structuring a scalable React project
-
----
-
-## 🚧 Limitations / Future Improvements
-
-* Infinite scrolling for image search
-* User authentication
-* Cloud saving for edited images
-* Performance optimizations for large images
-* Mobile & touch gesture support
+- Custom rendering pipeline using `canvas.getContext("2d")`
+- Transformation handling with:
+  - `translate()`
+  - `rotate()`
+  - `scale()`
+- Dynamic filter generation using `ctx.filter`
+- Cropping implemented using `getImageData()` and offscreen canvas
+- Performance optimization using `requestAnimationFrame`
+- State history stack for Undo/Redo functionality
 
 ---
 
-## 🧑‍💻 Author
+## 📦 Installation
 
-**Ethan**
-
-This project represents my first major step into building complex frontend applications with real-world features.
-
----
-
-⭐ If you like this project, feel free to star the repo and share feedback!
+```bash
+git clone https://github.com/YOUR_USERNAME/MediaFinder.git
+cd MediaFinder
+npm install
+npm run dev
