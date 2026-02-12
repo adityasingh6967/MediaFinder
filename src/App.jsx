@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Bell, ChevronDown, Ellipsis, Menu } from 'lucide-react'
 import { Routes, Route } from 'react-router-dom';
 import Collection from './pages/Collections';
+import logo from "./assets/logo1.png";
 import HomePage from './pages/HomePage';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -15,7 +16,7 @@ const App = () => {
       <nav className='w-full sticky z-50 top-0 flex items-center justify-center h-21 border-b border-[#202020] bg-neutral-900'>
         <div className='w-[85%] flex items-center justify-between'>
           <a className='p-2 rounded-full cursor-pointer hover:bg-[#202020] duration-200'>
-            <img src="../src/assets/logo1.png" className='h-12 w-12' alt="" />
+            <img src={logo} className='h-12 w-12' alt="" />
           </a>
           <div className='flex gap-3 items-center font-semibold relative'>
             <button className='md:flex hidden items-center  duration-200 gap-1 py-3 px-4 hover:bg-[#202020] rounded-full cursor-pointer text-[17px]'>Explore <ChevronDown size={18} strokeWidth={3} /></button>
