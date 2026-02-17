@@ -116,7 +116,7 @@ const ResultGrid = () => {
     </div>
   );
   if (!query) {
-    return <div className="text-2xl font-semibold text-center mx-auto mt-8">Waiting for you to search and we'll give <br /> you the best results</div>;
+    return <div className="text-2xl font-semibold text-center mx-auto mt-8">Start searching to explore high-quality media instantly.</div>;
   }
   if (results.length === 0 && !loading && query) {
     return <div className="text-xl font-semibold text-center mx-auto mt-8">We are sorry but we are not able to find results for "{query}"</div>;

@@ -14,7 +14,7 @@ const SearchDiv = () => {
                 </div>
             </div>
             <div className='xl:w-3/5 w-full flex flex-col gap-10'>
-                <h1 className='xl:text-4xl md:text-xl lg:text-2xl sm:text-xl font-bold'>The best premium photos, royalty free images ,videos & GIFs.</h1>
+                <h1 className='xl:text-4xl md:text-xl lg:text-2xl sm:text-xl font-bold'>Search and discover high-quality images, videos, and GIFs instantly.</h1>
                 <SearchBar />
             </div>
         </div>
